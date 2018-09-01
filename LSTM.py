@@ -2,7 +2,6 @@
 Author: CHIN JUNG, HSU
 
 """
-
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
@@ -58,10 +57,6 @@ init = tf.global_variables_initializer()
 
 # Start training
 with tf.Session() as sess:
-
-    # writer
-    writer = tf.summary.FileWriter('logs/', sess.graph)
-    
     # Run the initializer
     sess.run(init)
     
@@ -70,7 +65,5 @@ with tf.Session() as sess:
             batch_xs, batch_ys = mnist.train.next_batch(batch_size)
             sess.run(train_step, feed_dict={x:batch_xs, y:batch_ys})
             
-        print(":" + str(step) + ", accuracy" +str(sess.run(accuracy, feed_dict={x:mnist.test.images, y:mnist.test.labels})))
+        print('Iteration: ' + str(step) + ', Accuracy: ' + str(sess.run(accuracy, feed_dict={x:mnist.test.images, y:mnist.test.labels})))
         
-        
-writer.close()
