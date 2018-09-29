@@ -1,6 +1,7 @@
 # Deep-Leaning-Implementation
 ### Environment 
 ##### tensorflow: 1.10
+##### python: 3.5
 ##### dataset: MNIST
 ***
 ### Model
